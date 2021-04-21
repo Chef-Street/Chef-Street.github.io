@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+<h3>Вопросы</h3>
+
+<button class="collapsible">Почему адрес не входит в зону доставки?</button>
+<div class="content">
+  <p>Мы хотим быть уверены, что заказ поступит вам свежим и горячим. Поэтому мы вынуждены ограничивать зону доставки. Если адрес находится далеко от нашей кухни, мы не сможем гарантировать, что еда приедет горячей и вкусной. Если вы не нашли свою улицу в адресе доставки, не переживайте, скоро мы будем в вашем районе</p>
+</div>
+<button class="collapsible">Можно ли изменить заказ?</button>
+<div class="content">
+  <p>Вы всегда можете связаться с нами по телефону и дать комментарий или пожелание по своему заказу</p>
+</div>
+<button class="collapsible">Как быстро мне привезут еду после заказа?</button>
+<div class="content">
+  <p>Мы стараемся как можно быстрее доставить вам ваш заказ, чтобы вы его получили по истечении 20 минут</p>
+</div>
+<button class="collapsible">В каких городах вы работаете?</button>
+<div class="content">
+  <p>Пока мы работаем в Москве и Московской области. При оформлении заказа вы сможете увидеть, входит ли ваш адрес в зону доставки. Если не входит, не расстраивайтесь, скоро ШЕФ ЗДЕСЬ будет и в вашем районе</p>
+</div>
+<button class="collapsible">Какой минимальный размер заказа?</button>
+<div class="content">
+  <p>У нас нет минимального размера заказа. Мы стараемся максимально быть с вами откровенными и показываем, сколько будет стоить доставка при любом заказе. Не нужно добирать до минимальной суммы, ешьте в свое удовольствие</p>
+</div>
+<button class="collapsible">Как мне оплатить заказ?</button>
+<div class="content">
+  <p>Мы отказались от наличных денег. Вы можете оплатить заказ своей пластиковой картой</p>
+</div>
+<button class="collapsible">Можно ли изменить определенный ингредиент в блюде, если есть аллергия?</button>
+<div class="content">
+  <p>Да, свяжитесь с нами по телефону, и мы найдем решение специально для вас</p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
